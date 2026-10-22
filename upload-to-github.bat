@@ -3,7 +3,7 @@ title Push Manga Portfolio to GitHub
 chcp 65001 >nul
 echo ========================================================
 echo   GitHub リポジトリへアップロード中...
-echo   https://github.com/tenisubaka123-beep/My-portfolio
+echo   https://github.com/tenisubaka123-beep/My-portfplio.git
 echo ========================================================
 cd /d "C:\Users\yoshi\.gemini\antigravity\scratch\manga-portfolio"
 
@@ -13,13 +13,14 @@ echo または「Authorize」をクリックしてログインを完了してく
 echo （パスワードやトークンの手動入力は不要です）
 echo.
 
+git branch -M main
 git push -u origin main
 
 if %ERRORLEVEL% EQU 0 (
     echo.
     echo ========================================================
     echo   【成功】GitHub へのアップロードが完了しました！
-    echo   リポジトリURL: https://github.com/tenisubaka123-beep/My-portfolio
+    echo   リポジトリURL: https://github.com/tenisubaka123-beep/My-portfplio
     echo ========================================================
 ) else (
     echo.
