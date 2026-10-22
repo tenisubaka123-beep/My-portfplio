@@ -1,0 +1,293 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: var(--font-noto-sans-jp), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-heading: var(--font-plus-jakarta), var(--font-noto-sans-jp), sans-serif;
+    
+    /* Pop Manga Palette: Black & White + Yellow (Main) + Blue (Sub) */
+    --color-pop-black: #000000;
+    --color-pop-white: #FFFFFF;
+    --color-pop-yellow: #FED54A;
+    --color-pop-yellow-bright: #FFE500;
+    --color-pop-blue: #3B82F6;
+    --color-pop-blue-dark: #1D4ED8;
+    --color-pop-blue-light: #EFF6FF;
+    --color-pop-paper: #FDFCF7;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #000000;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* ============================================================== */
+/* POP MANGA BEN-DAY & SCREENTONE DOTS (網点・ドットスタイル)       */
+/* ============================================================== */
+
+/* 1. Classic Comic Halftone Ben-Day Dots (Black) */
+.bg-pop-dots-black {
+  background-image: radial-gradient(#000000 1.6px, transparent 1.6px);
+  background-size: 8px 8px;
+}
+
+.bg-pop-dots-black-dense {
+  background-image: radial-gradient(#000000 2.2px, transparent 2.2px);
+  background-size: 6px 6px;
+}
+
+.bg-pop-dots-black-soft {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.28) 1.6px, transparent 1.6px);
+  background-size: 10px 10px;
+}
+
+.bg-manga-screentone-soft {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.32) 1.8px, transparent 1.8px);
+  background-size: 8px 8px;
+}
+
+/* 2. Pop Yellow Ben-Day Dots (Main) */
+.bg-pop-dots-yellow {
+  background-image: radial-gradient(#FED54A 2.5px, transparent 2.5px);
+  background-size: 10px 10px;
+}
+
+.bg-pop-dots-yellow-dense {
+  background-image: radial-gradient(#FFE500 3px, transparent 3px);
+  background-size: 8px 8px;
+}
+
+/* 3. Pop Blue Ben-Day Dots (Sub) */
+.bg-pop-dots-blue {
+  background-image: radial-gradient(#3B82F6 2.5px, transparent 2.5px);
+  background-size: 10px 10px;
+}
+
+.bg-pop-dots-blue-soft {
+  background-image: radial-gradient(rgba(59, 130, 246, 0.25) 2px, transparent 2px);
+  background-size: 10px 10px;
+}
+
+/* 4. Manga Manuscript Grid Guidelines */
+.bg-manuscript-grid {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.16) 1px, transparent 1px);
+}
+
+/* ============================================================== */
+/* MANGA FOCUS SPEED LINES (集中線)                               */
+/* ============================================================== */
+.bg-manga-focus-lines {
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(0, 0, 0, 0.2) 0deg 2deg,
+    transparent 2deg 6deg,
+    rgba(0, 0, 0, 0.35) 6deg 7deg,
+    transparent 7deg 12deg
+  );
+}
+
+.bg-manga-focus-lines-dense {
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(0, 0, 0, 0.4) 0deg 1.5deg,
+    transparent 1.5deg 4deg,
+    rgba(0, 0, 0, 0.6) 4deg 5deg,
+    transparent 5deg 8deg
+  );
+}
+
+/* ============================================================== */
+/* POP COMIC PANEL BORDERS & HARD OFFSET SHADOWS (コマ枠)           */
+/* ============================================================== */
+.pop-comic-panel {
+  border: 4px solid #000000;
+  background-color: #FFFFFF;
+  box-shadow: 6px 6px 0px #000000;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pop-comic-panel:hover {
+  transform: translateY(-3px) translateX(-1px);
+  box-shadow: 9px 9px 0px #000000;
+}
+
+.pop-comic-panel-yellow {
+  border: 4px solid #000000;
+  background-color: #FED54A;
+  box-shadow: 6px 6px 0px #000000;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pop-comic-panel-blue {
+  border: 4px solid #000000;
+  background-color: #3B82F6;
+  color: #FFFFFF;
+  box-shadow: 6px 6px 0px #000000;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================== */
+/* POP MANGA BUTTONS (Yellow Main & Blue Sub)                     */
+/* ============================================================== */
+.pop-btn-yellow {
+  background-color: #FED54A;
+  color: #000000;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+  font-weight: 900;
+  transition: all 0.15s ease;
+}
+
+.pop-btn-yellow:hover {
+  background-color: #FFE500;
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.pop-btn-blue {
+  background-color: #3B82F6;
+  color: #FFFFFF;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+  font-weight: 900;
+  transition: all 0.15s ease;
+}
+
+.pop-btn-blue:hover {
+  background-color: #2563EB;
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.pop-btn-white {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+  font-weight: 900;
+  transition: all 0.15s ease;
+}
+
+.pop-btn-white:hover {
+  background-color: #FED54A;
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px #000000;
+}
+
+/* ============================================================== */
+/* POP ONOMATOPOEIA (オノマトペ 3D立体文字)                        */
+/* ============================================================== */
+.pop-onomatope-yellow {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  color: #FED54A;
+  -webkit-text-stroke: 6px #000000;
+  paint-order: stroke fill;
+  filter: drop-shadow(5px 5px 0px #000000);
+}
+
+.pop-onomatope-blue {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  color: #3B82F6;
+  -webkit-text-stroke: 6px #000000;
+  paint-order: stroke fill;
+  filter: drop-shadow(5px 5px 0px #000000);
+}
+
+.pop-onomatope-white {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  color: #FFFFFF;
+  -webkit-text-stroke: 7px #000000;
+  paint-order: stroke fill;
+  filter: drop-shadow(6px 6px 0px #000000);
+}
+
+.pop-onomatope-black {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  color: #000000;
+  -webkit-text-stroke: 4px #FFFFFF;
+  paint-order: stroke fill;
+  filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.4));
+}
+
+/* Legacy mappings */
+.manga-onomatope-dodon {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  color: #FFFFFF;
+  -webkit-text-stroke: 7px #000000;
+  paint-order: stroke fill;
+  filter: drop-shadow(6px 6px 0px #000000);
+}
+
+.manga-onomatope-black {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  color: #000000;
+  -webkit-text-stroke: 4px #FFFFFF;
+  paint-order: stroke fill;
+  filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.4));
+}
+
+.manga-onomatope-yellow {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  color: #FED54A;
+  -webkit-text-stroke: 6px #000000;
+  paint-order: stroke fill;
+  filter: drop-shadow(5px 5px 0px #000000);
+}
+
+.kodansha-panel {
+  border: 4px solid #000000;
+  box-shadow: 6px 7px 0px #000000;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kodansha-panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 8px 10px 0px #000000;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+/* Custom scrollbar in Pop Manga Colors (Yellow & Blue) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+::-webkit-scrollbar-thumb {
+  background: #FED54A;
+  border-radius: 9999px;
+  border: 2px solid #000000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
